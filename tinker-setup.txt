@@ -1,0 +1,19 @@
+use App\Models\Utilisateur;
+use App\Models\Role;
+
+$user = Utilisateur::updateOrCreate(
+    ['email' => 'admin@campus.com'],
+    [
+        'nom' => 'Administrateur Campus',
+        'mot_de_passe' => 'Admin123!',
+        'email_verified_at' => now()
+    ]
+);
+
+$role = Role::where('slug', 'super_admin')->first();
+$user->role_id = $role->id;
+$user->save();
+
+echo "✅ Super admin configuré avec succès!\n";
+echo "Email: admin@campus.com\n";
+echo "Mot de passe: Admin123!\n";

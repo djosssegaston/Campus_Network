@@ -1,0 +1,13 @@
+# .gitignore CORRECT pour déploiement hébergement gratuit:
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/.env
+/.idea
+/.vscode
+.env.backup
+.phpunit.result.cache
+
+# NE PAS ignorer vendor/ car hébergeurs gratuits ne peuvent pas faire composer install
+# vendor/  # ENLEVEZ CETTE LIGNE SI ELLE EXISTE!
